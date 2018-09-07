@@ -1,0 +1,27 @@
+{
+    "name": "react-native-ez-theme",
+    "version": "0.1.0",
+    "description": "A lightweight theme provider for React Native Apps",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/karlmarxlopez/react-native-ez-theme.git"
+    },
+    "keywords": [
+      "react-native",
+      "react native",
+      "theme",
+      "themer",
+      "theme provider"
+    ],
+    "author": "Karl Marx Lopez <karlmarx@compassstarltd.com>",
+    "license": "MIT",
+    "bugs": {
+      "url": "https://github.com/karlmarxlopez/react-native-ez-theme/issues"
+    },
+    "homepage": "https://github.com/karlmarxlopez/react-native-ez-theme#readme"
+  }
+  
