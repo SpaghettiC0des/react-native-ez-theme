@@ -82,7 +82,7 @@ export default MyComponent;
 ``` jsx
 import React from "react";
 import { View } from "react-native";
-import { withTheme } from "react-native-ez-theme";
+import { withTheme } from "./appTheme";
 
 class Themify extends React.Component {
   render() {
