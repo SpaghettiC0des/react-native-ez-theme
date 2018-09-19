@@ -48,7 +48,7 @@ import { EzThemeProvider } from "./appTheme";
 import MyComponent from "./MyComponent";
 
 const Root = () => (
-  <EzThemeProvider value="DEFAULT.LIGHT">
+  <EzThemeProvider name="DEFAULT.LIGHT">
     <MyComponent />
   </EzThemeProvider>
 );
