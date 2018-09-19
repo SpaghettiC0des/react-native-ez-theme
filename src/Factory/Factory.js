@@ -10,13 +10,13 @@ function Factory<T>(
   const { Provider, Consumer } = React.createContext<T>(themeConfig);
 
   const ThemeProvider = ({
-    value,
+    name,
     children
   }: {
-    value: string,
+    name: string,
     children: any
   }) => {
-    const themeName = value.split(".");
+    const themeName = name.split(".");
 
     const selectedTheme =
       themeName.length === 1

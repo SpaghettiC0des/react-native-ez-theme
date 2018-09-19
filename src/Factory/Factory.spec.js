@@ -38,7 +38,7 @@ describe("Factory", () => {
     const { EzThemeConsumer, EzThemeProvider } = Factory(themeConfig);
     const defaultTheme = renderer
       .create(
-        <EzThemeProvider value="DEFAULT.LIGHT">
+        <EzThemeProvider name="DEFAULT.LIGHT">
           <EzThemeConsumer>
             {theme => <View style={{ backgroundColor: theme.bgColor }} />}
           </EzThemeConsumer>
@@ -48,7 +48,7 @@ describe("Factory", () => {
     expect(defaultTheme).toMatchSnapshot();
 
     const customTheme = renderer.create(
-      <EzThemeProvider value="CUSTOM.DARK">
+      <EzThemeProvider name="CUSTOM.DARK">
         <EzThemeConsumer>
           {theme => <View style={{ backgroundColor: theme.bgColor }} />}
         </EzThemeConsumer>
