@@ -1,5 +1,3 @@
-import Factory from "./Factory/Factory";
+import createTheme from "./Factory/Factory";
 
-export default {
-  createTheme: Factory
-};
+export { createTheme };
