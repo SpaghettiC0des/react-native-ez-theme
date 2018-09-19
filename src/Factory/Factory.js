@@ -10,13 +10,13 @@ function Factory<T>(
   const { Provider, Consumer } = React.createContext<T>(themeConfig);
 
   const ThemeProvider = ({
-    value,
+    name,
     children
   }: {
-    value: string,
+    name: string,
     children: any
   }) => {
-    const themeName = value.split(".");
+    const themeName = name.split(".");
 
     const selectedTheme =
       themeName.length === 1
@@ -26,9 +26,18 @@ function Factory<T>(
     return <Provider value={selectedTheme}>{children}</Provider>;
   };
 
+  const withTheme = (staticItems: Object = {}): React.Node => Component => {
+    const WrappedComponent = props => (
+      <Consumer>{theme => <Component {...props} theme={theme} />}</Consumer>
+    );
+
+    return Object.assign(WrappedComponent, staticItems);
+  };
+
   return {
     EzThemeProvider: ThemeProvider,
-    EzThemeConsumer: Consumer
+    EzThemeConsumer: Consumer,
+    withTheme
   };
 }
 

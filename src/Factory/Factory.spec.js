@@ -8,11 +8,12 @@ describe("Factory", () => {
     expect(Factory.length).toEqual(1);
   });
 
-  it("should return an object containing EzThemeProvider and EzThemeConsumer", () => {
+  it("should return an object containing EzThemeProvider, EzThemeConsumer and withTheme", () => {
     const theme = Factory({});
 
     expect(Object.keys(theme).indexOf("EzThemeProvider") > -1).toBe(true);
     expect(Object.keys(theme).indexOf("EzThemeConsumer") > -1).toBe(true);
+    expect(Object.keys(theme).indexOf("withTheme") > -1).toBe(true);
   });
 
   it("should provide theme config on the child function of EzThemeProvider", () => {
@@ -37,7 +38,7 @@ describe("Factory", () => {
     const { EzThemeConsumer, EzThemeProvider } = Factory(themeConfig);
     const defaultTheme = renderer
       .create(
-        <EzThemeProvider value="DEFAULT.LIGHT">
+        <EzThemeProvider name="DEFAULT.LIGHT">
           <EzThemeConsumer>
             {theme => <View style={{ backgroundColor: theme.bgColor }} />}
           </EzThemeConsumer>
@@ -47,7 +48,7 @@ describe("Factory", () => {
     expect(defaultTheme).toMatchSnapshot();
 
     const customTheme = renderer.create(
-      <EzThemeProvider value="CUSTOM.DARK">
+      <EzThemeProvider name="CUSTOM.DARK">
         <EzThemeConsumer>
           {theme => <View style={{ backgroundColor: theme.bgColor }} />}
         </EzThemeConsumer>
