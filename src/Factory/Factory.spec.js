@@ -8,11 +8,12 @@ describe("Factory", () => {
     expect(Factory.length).toEqual(1);
   });
 
-  it("should return an object containing EzThemeProvider and EzThemeConsumer", () => {
+  it("should return an object containing EzThemeProvider, EzThemeConsumer and withTheme", () => {
     const theme = Factory({});
 
     expect(Object.keys(theme).indexOf("EzThemeProvider") > -1).toBe(true);
     expect(Object.keys(theme).indexOf("EzThemeConsumer") > -1).toBe(true);
+    expect(Object.keys(theme).indexOf("withTheme") > -1).toBe(true);
   });
 
   it("should provide theme config on the child function of EzThemeProvider", () => {
