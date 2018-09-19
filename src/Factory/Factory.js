@@ -20,7 +20,7 @@ function Factory<T>(
 
     const selectedTheme =
       themeName.length === 1
-        ? themeConfig[themeName[0]].LIGHT
+        ? themeConfig[themeName[0]]
         : themeConfig[themeName[0]][themeName[1]];
 
     return <Provider value={selectedTheme}>{children}</Provider>;
