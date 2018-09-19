@@ -37,7 +37,7 @@ describe("Factory", () => {
     const { EzThemeConsumer, EzThemeProvider } = Factory(themeConfig);
     const defaultTheme = renderer
       .create(
-        <EzThemeProvider value="DEFAULT">
+        <EzThemeProvider value="DEFAULT.LIGHT">
           <EzThemeConsumer>
             {theme => <View style={{ backgroundColor: theme.bgColor }} />}
           </EzThemeConsumer>
