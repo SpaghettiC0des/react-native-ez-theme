@@ -12,6 +12,8 @@ OR
 
 # Sample usage
 
+## Using EzThemeProvider
+
 Configure the theme provider
 
 ```jsx
@@ -75,10 +77,30 @@ const MyComponent = () => (
 
 export default MyComponent;
 ```
+## Using withTheme HOC
+
+``` jsx
+import React from "react";
+import { View } from "react-native";
+import { withTheme } from "react-native-ez-theme";
+
+class Themify extends React.Component {
+  render() {
+    return (
+      <View style={{ backgroundColor: this.props.bgColor  }} />
+    );
+  }
+}
+
+withTheme()(Themify);
+```
+
 
 # API
 
 `createTheme(themeConfig: Object) : {EzThemeProvider, EzThemeConsumer}`
+
+`withTheme(staticItems: Object)(Component)`
 
 # Todos
 
