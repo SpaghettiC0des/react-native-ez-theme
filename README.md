@@ -82,5 +82,4 @@ export default MyComponent;
 
 # Todos
 
-- [] Add flow type
-- [] Add HOC
+- Add flow type
