@@ -19,3 +19,13 @@ exports[`Factory should provide theme config on the child function of EzThemePro
   }
 />
 `;
+
+exports[`withTheme HOC should add theme props to the wrapped component 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "blue",
+    }
+  }
+/>
+`;
