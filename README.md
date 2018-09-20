@@ -77,18 +77,19 @@ const MyComponent = () => (
 
 export default MyComponent;
 ```
+
 ## Using withTheme HOC
 
-``` jsx
+`withTheme` provides a `theme` props to the wrapped component.
+
+```jsx
 import React from "react";
 import { View } from "react-native";
 import { withTheme } from "./appTheme";
 
 class Themify extends React.Component {
   render() {
-    return (
-      <View style={{ backgroundColor: this.props.bgColor  }} />
-    );
+    return <View style={{ backgroundColor: this.props.theme.bgColor }} />;
   }
 }
 
@@ -99,7 +100,6 @@ class Themify extends React.Component {
 withTheme()(Themify);
 ```
 
-
 # API
 
 `createTheme(themeConfig: Object) : {EzThemeProvider, EzThemeConsumer}`
@@ -108,5 +108,5 @@ withTheme()(Themify);
 
 # Todos
 
-- [ ] Add flow type
-- [ ] Add an example app
+1. [ ] Add flow type
+1. [ ] Add an example app
