@@ -1,11 +1,13 @@
 // @flow
 import * as React from "react";
+import getSelectedTheme from "../utils/getSelectedTheme";
 
 function Factory<T>(
   themeConfig: T
 ): {
   EzThemeProvider: React.ComponentType<React.ProviderProps<T>>,
-  EzThemeConsumer: React.ComponentType<React.ConsumerProps<*>>
+  EzThemeConsumer: React.ComponentType<React.ConsumerProps<*>>,
+  withTheme: ({ staticItems?: Object }) => React.Node => React.Node
 } {
   const { Provider, Consumer } = React.createContext<T>(themeConfig);
 
@@ -16,12 +18,7 @@ function Factory<T>(
     name: string,
     children: any
   }) => {
-    const themeName = name.split(".");
-
-    const selectedTheme =
-      themeName.length === 1
-        ? themeConfig[themeName[0]]
-        : themeConfig[themeName[0]][themeName[1]];
+    const selectedTheme = getSelectedTheme(name, themeConfig);
 
     return <Provider value={selectedTheme}>{children}</Provider>;
   };

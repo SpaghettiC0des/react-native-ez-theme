@@ -12,6 +12,8 @@ OR
 
 # Sample usage
 
+## Using EzThemeProvider
+
 Configure the theme provider
 
 ```jsx
@@ -75,11 +77,36 @@ const MyComponent = () => (
 
 export default MyComponent;
 ```
+## Using withTheme HOC
+
+``` jsx
+import React from "react";
+import { View } from "react-native";
+import { withTheme } from "./appTheme";
+
+class Themify extends React.Component {
+  render() {
+    return (
+      <View style={{ backgroundColor: this.props.bgColor  }} />
+    );
+  }
+}
+
+// You can provide static items to withTheme
+// For example withTheme({ hello: "world" })(Themify)
+// This is useful if you're using libraries like react-navigation
+//  where you need to provide the static `navigationOptions` for the wrapped component
+withTheme()(Themify);
+```
+
 
 # API
 
 `createTheme(themeConfig: Object) : {EzThemeProvider, EzThemeConsumer}`
 
+`withTheme(staticItems: Object)(Component)`
+
 # Todos
 
-- Add flow type
+- [ ] Add flow type
+- [ ] Add an example app

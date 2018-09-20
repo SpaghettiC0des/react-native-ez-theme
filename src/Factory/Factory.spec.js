@@ -15,7 +15,9 @@ describe("Factory", () => {
     expect(Object.keys(theme).indexOf("EzThemeConsumer") > -1).toBe(true);
     expect(Object.keys(theme).indexOf("withTheme") > -1).toBe(true);
   });
+});
 
+describe("EzThemeProvider", () => {
   it("should provide theme config on the child function of EzThemeProvider", () => {
     const themeConfig = {
       DEFAULT: {
@@ -56,5 +58,48 @@ describe("Factory", () => {
     );
 
     expect(customTheme).toMatchSnapshot();
+  });
+});
+
+describe("withTheme HOC", () => {
+  let RootComponent;
+  let TestComponent;
+  let _withTheme;
+  beforeEach(() => {
+    let { EzThemeProvider, withTheme } = Factory({
+      DEFAULT: {
+        LIGHT: {
+          bgColor: "blue"
+        }
+      }
+    });
+    _withTheme = withTheme;
+
+    TestComponent = ({ theme }) => (
+      <View style={{ backgroundColor: theme.bgColor }} />
+    );
+
+    RootComponent = ({ children }) => (
+      <EzThemeProvider name="DEFAULT.LIGHT">{children}</EzThemeProvider>
+    );
+  });
+  it("should accept static items as the first function parameter", () => {
+    let TestComponentWithTheme = _withTheme({ thisIsStatic: true })(
+      TestComponent
+    );
+
+    expect(TestComponentWithTheme.thisIsStatic).toBe(true);
+  });
+
+  it("should add theme props to the wrapped component", () => {
+    let TestComponentWithoutStaticProps = _withTheme()(TestComponent);
+
+    let wrapper = renderer.create(
+      <RootComponent>
+        <TestComponentWithoutStaticProps />
+      </RootComponent>
+    );
+
+    expect(wrapper).toMatchSnapshot();
   });
 });
