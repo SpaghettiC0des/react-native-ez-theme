@@ -1,5 +1,6 @@
 // @flow
 import * as React from "react";
+import getSelectedTheme from "../utils/getSelectedTheme";
 
 function Factory<T>(
   themeConfig: T
@@ -17,12 +18,7 @@ function Factory<T>(
     name: string,
     children: any
   }) => {
-    const themeName = name.split(".");
-
-    const selectedTheme =
-      themeName.length === 1
-        ? themeConfig[themeName[0]]
-        : themeConfig[themeName[0]][themeName[1]];
+    const selectedTheme = getSelectedTheme(name, themeConfig);
 
     return <Provider value={selectedTheme}>{children}</Provider>;
   };
