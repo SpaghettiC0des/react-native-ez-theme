@@ -15,7 +15,9 @@ describe("Factory", () => {
     expect(Object.keys(theme).indexOf("EzThemeConsumer") > -1).toBe(true);
     expect(Object.keys(theme).indexOf("withTheme") > -1).toBe(true);
   });
+});
 
+describe("EzThemeProvider", () => {
   it("should provide theme config on the child function of EzThemeProvider", () => {
     const themeConfig = {
       DEFAULT: {

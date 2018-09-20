@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Factory should provide theme config on the child function of EzThemeProvider 1`] = `
+exports[`EzThemeProvider should provide theme config on the child function of EzThemeProvider 1`] = `
 <View
   style={
     Object {
@@ -10,7 +10,7 @@ exports[`Factory should provide theme config on the child function of EzThemePro
 />
 `;
 
-exports[`Factory should provide theme config on the child function of EzThemeProvider 2`] = `
+exports[`EzThemeProvider should provide theme config on the child function of EzThemeProvider 2`] = `
 <View
   style={
     Object {
