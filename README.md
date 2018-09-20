@@ -108,4 +108,5 @@ withTheme()(Themify);
 
 # Todos
 
-- Add flow type
+- [ ] Add flow type
+- [ ] Add an example app
