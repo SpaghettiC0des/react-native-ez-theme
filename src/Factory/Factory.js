@@ -5,7 +5,8 @@ function Factory<T>(
   themeConfig: T
 ): {
   EzThemeProvider: React.ComponentType<React.ProviderProps<T>>,
-  EzThemeConsumer: React.ComponentType<React.ConsumerProps<*>>
+  EzThemeConsumer: React.ComponentType<React.ConsumerProps<*>>,
+  withTheme: ({ staticItems?: Object }) => React.Node => React.Node
 } {
   const { Provider, Consumer } = React.createContext<T>(themeConfig);
 
