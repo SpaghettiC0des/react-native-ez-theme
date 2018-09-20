@@ -92,6 +92,10 @@ class Themify extends React.Component {
   }
 }
 
+// You can provide static items to withTheme
+// For example withTheme({ hello: "world" })(Themify)
+// This is useful if you're using libraries like react-navigation
+//  where you need to provide the static `navigationOptions` for the wrapped component
 withTheme()(Themify);
 ```
 
