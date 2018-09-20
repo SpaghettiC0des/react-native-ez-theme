@@ -1,6 +1,6 @@
 {
   "name": "react-native-ez-theme",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "license": "MIT",
   "author": "Karl Marx Lopez <officialkarl.kml@gmail.com>",
   "description": "A lightweight theme provider for React Native Apps",
