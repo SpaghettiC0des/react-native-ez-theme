@@ -24,8 +24,8 @@
     "test": "jest"
   },
   "peerDependencies": {
-    "react": "^16.0.0",
-    "react-native": "^0.54"
+    "react": ">=16.0.0",
+    "react-native": ">=0.54"
   },
   "devDependencies": {
     "babel-jest": "23.6.0",
